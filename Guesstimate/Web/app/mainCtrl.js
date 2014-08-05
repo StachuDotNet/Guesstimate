@@ -1,4 +1,4 @@
-﻿angular.module('Guesstimate').controller('MainController', function ($rootScope, $scope, $location) {
+﻿angular.module('Guesstimate').controller('MainController', function ($rootScope, $scope, $location, team) {
 
     $rootScope.$on("$routeChangeStart", function () { $rootScope.loading = true; });
     $rootScope.$on("$routeChangeSuccess", function () { $rootScope.loading = false; });
