@@ -150,6 +150,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Hubs\Admin.cs" />
+    <Compile Include="Hubs\TeamHub.cs" />
+    <Compile Include="Hubs\UserManagement.cs" />
+    <Compile Include="Hubs\Voting.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Modules\HomeModule.cs" />
