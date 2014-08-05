@@ -17,14 +17,6 @@
                     <a class="btn btn-primary" href="#boundOverlay" toggle="on">Show overlay</a>
                     <a ng-show="credentials.loggedIn" ng-click="$parent.submitVote($parent.myVote)" class="btn btn-primary">Vote</a>
                 </div>
-
-                <div bs-panel title="Votes for this round" ng-show="credentials.loggedIn">
-                    <div class="list-group">
-                        <div ng-repeat="vote in votesForCurrentRound | orderBy: 'vote'" href="#" class="list-group-item">
-                            {{vote.vote}} {{ vote.name }}
-                        </div>
-                    </div>
-                </div>
             </form>
         </div>
     </div>

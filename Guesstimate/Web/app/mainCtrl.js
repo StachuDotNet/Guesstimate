@@ -12,12 +12,43 @@
 
     $rootScope.log_in = { };
 
+    // Start of SignalR recievers
+    team.client.updateUserList = function (newUserList) {
+        $rootScope.teamMembers = JSON.parse(newUserList);
+        $rootScope.$apply();
+    };
+
+    team.client.updateVoteList = function (newVoteList) {
+        $rootScope.votesForCurrentRound = JSON.parse(newVoteList);
+        $rootScope.$apply();
+    };
+    // End of SignalR recievers
+
+
+    // Start of SignalR senders
     $rootScope.logOff = function () {
-        alert('logging off'); // do stuff
+        team.server.logOff($rootScope.credentials.userName, $rootScope.credentials.password)
+            .done(function (result) {
+                if (result) {
+                    $rootScope.clearCredentials();
+                    $rootScope.$apply();
+                } else {
+                    alert('bad');
+                }
+            });
     };
 
     $rootScope.claimAdmin = function () {
-        alert('claiming administration with some password.'); // do stuff
+        team.server.claimAdmin($rootScope.admin_creds.pass)
+			.done(function (result) {
+			    if (result) {
+			        $rootScope.credentials.isAdmin = true;
+			        $location.path("");
+			        $rootScope.$apply();
+			    } else {
+			        alert('bad');
+			    }
+			});
     };
 
     $rootScope.clearVotes = function () {
@@ -26,7 +57,7 @@
     }
 
     $rootScope.submitVote = function (vote) {
-        alert('submitting a vote:' + vote); // do stuff
+        team.server.submitVoteForCurrentRound($rootScope.credentials.userName, $rootScope.credentials.password, vote);
     }
 
     $rootScope.clearCredentials = function () {
@@ -53,7 +84,16 @@
 
         $rootScope.credentials.team.name = $rootScope.log_in.team;
 
-        alert("logging in or something.");// do stuff
+        team.server.logOn($rootScope.credentials.userName, $rootScope.credentials.password)
+            .done(function (result) {
+                if (result) {
+                    $rootScope.credentials.loggedIn = true;
+                    $location.path(""); // why no work?
+                    $rootScope.$apply();
+                } else {
+                    alert('bad');
+                }
+            });
     };
 
     $rootScope.submitNewUser = function () {

@@ -10,5 +10,5 @@
         console.log("An error occured: " + error);
     });
 
-    angular.module('PlanningPoker').value('team', $.connection.teamHub);
+    angular.module('Guesstimate').value('team', $.connection.teamHub);
 })();
