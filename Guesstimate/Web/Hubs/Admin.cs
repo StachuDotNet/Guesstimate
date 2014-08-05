@@ -23,14 +23,13 @@ namespace Web.Hubs
 
         public bool ClearVotesAdmin(string adminPass)
         {
-            if (!_repo.ClearVotes(adminPass))
+            if (_repo.ClearVotes(adminPass))
             {
                 UpdateClientVoteList();
-                return false;
+                return true;
             }
 
-            Clients.All.ClearVotes();
-            return true;
+            return false;
         }
     }
 }

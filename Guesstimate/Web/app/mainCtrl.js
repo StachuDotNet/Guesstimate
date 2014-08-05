@@ -96,7 +96,8 @@
             });
     };
 
-    $rootScope.submitNewUser = function () {
-        alert($rootScope.userToCreate); // do stuff with $rootScope.userToCreate
+    $rootScope.nextRound = function () {
+        alert('here');
+        team.server.clearVotesAdmin($rootScope.admin_creds.pass);
     };
 });

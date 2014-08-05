@@ -6,7 +6,7 @@
 	<div class="scrollable-content container section">
 		
 		<div bs-panel title="Options">
-			<button class="btn btn-primary">Start a new round.</button>
+			<button ng-click="nextRound()" class="btn btn-primary">Start a new round.</button>
 			<switch ng-model="admin.showVotes" label="Show Votes" bs-form-control></switch>
 			<switch ng-model="admin.showNames" label="Show Names" bs-form-control></switch>
 		</div>
