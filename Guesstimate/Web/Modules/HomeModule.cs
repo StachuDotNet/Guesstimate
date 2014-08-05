@@ -10,7 +10,11 @@ namespace Web.Modules
     {
         public HomeModule()
         {
-            Get["/"] = _ => "Hello, I'm Nancy!";
+            Get["/"] = _ => View["index"];
+
+            Get["/helloworld"] = ctx => "Hello, I'm Nancy!";
+
+            Get["/hello/{something}"] = ctx => "Hello, " + ctx.something;
         }
     }
 }
