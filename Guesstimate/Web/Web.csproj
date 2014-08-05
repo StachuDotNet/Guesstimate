@@ -154,6 +154,7 @@
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="Modules\TestModule.cs" />
+    <Compile Include="Persistance\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Hubs\TestHub.cs" />
