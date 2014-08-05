@@ -150,6 +150,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Vote.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="Modules\TestModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
