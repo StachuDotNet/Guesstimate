@@ -1,0 +1,25 @@
+<div content-for="title">
+	<span>Log In</span>
+</div>
+
+
+<div class="scrollable">
+	<div class="scrollable-content container section">
+
+		<form ng-submit="submitLogin()">
+			<div bs-panel title="Supply Credentials!">
+				<input type="text" ng-model="log_in.username" label="User Name" bs-form-control />
+				<input type="password" ng-model="log_in.password" label="Password" bs-form-control />
+			</div>
+
+			<div bs-panel class="form-actions">
+				<div content-for="navbarAction" duplicate>
+					<button type="submit" class="btn btn-primary">
+						Save
+					</button>
+				</div>
+			</div>
+		</form>
+
+	</div>
+</div>

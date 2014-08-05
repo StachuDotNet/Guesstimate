@@ -78,6 +78,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\demo.css" />
+    <Content Include="app\demo.js" />
+    <Content Include="app\mainCtrl.js" />
+    <Content Include="app\partials\administrate.html" />
+    <Content Include="app\partials\home.html" />
+    <Content Include="app\partials\host.html" />
+    <Content Include="app\partials\login.html" />
+    <Content Include="app\partials\sidebar.html" />
+    <Content Include="app\partials\users.html" />
+    <Content Include="app\partials\vote.html" />
+    <Content Include="app\routing.js" />
     <Content Include="assets\css\mobile-angular-ui-base.css" />
     <Content Include="assets\css\mobile-angular-ui-base.min.css" />
     <Content Include="assets\css\mobile-angular-ui-desktop.css" />
@@ -120,6 +131,7 @@
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

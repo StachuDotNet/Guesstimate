@@ -1,0 +1,27 @@
+<div content-for="title">
+	<span>Host Poker</span>
+</div>
+
+<div class="scrollable">
+	<div class="scrollable-content container section">
+		
+		<div bs-panel title="Options">
+			<button class="btn btn-primary">Start a new round.</button>
+			<switch ng-model="admin.showVotes" label="Show Votes" bs-form-control></switch>
+			<switch ng-model="admin.showNames" label="Show Names" bs-form-control></switch>
+		</div>
+
+		<div class="section container">
+			<h4>Votes</h4>
+
+			<div class="scrollable-content">
+				<div class="list-group">
+					<div ng-repeat="vote in votesForCurrentRound | orderBy: 'vote'" href="#" class="list-group-item">
+                        <span ng-show="admin.showVotes">{{vote.vote}}</span> <span ng-show="admin.showNames">{{ vote.name }}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

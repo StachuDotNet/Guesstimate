@@ -15,7 +15,11 @@ namespace Web
             base.ConfigureConventions(nancyConventions);
 
             nancyConventions.StaticContentsConventions.Add(
-                StaticContentConventionBuilder.AddDirectory("/assets", "Assets")
+                StaticContentConventionBuilder.AddDirectory("/assets")
+            );
+
+            nancyConventions.StaticContentsConventions.Add(
+                StaticContentConventionBuilder.AddDirectory("/app")
             );
         }
     }

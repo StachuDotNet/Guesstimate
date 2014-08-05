@@ -1,0 +1,22 @@
+<div content-for="title">
+	<span>Claim your rights as an admin!</span>
+</div>
+
+
+<div class="scrollable">
+	<div class="scrollable-content">
+		<form ng-submit="claimAdmin()">
+			<div bs-panel title="Supply the admin password">
+				<input type="password" ng-model="admin_creds.pass" label="Password" bs-form-control />
+			</div>
+
+			<div bs-panel class="form-actions">
+				<div content-for="navbarAction" duplicate>
+					<button type="submit" class="btn btn-primary">
+						Do it.
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,37 @@
+<h1 class="app-name">Guesstimate</h1>
+
+<div class="scrollable sidebar-scrollable" ng-controller="MainController">
+    <div class="scrollable-content">
+        <div class="list-group" toggle="off" bubble target="mainSidebar">
+            <a class="list-group-item" href="#/">Home <i class="fa fa-chevron-right pull-right"></i></a>
+
+            <a class="list-group-item" href="#/vote">Vote <i class="fa fa-chevron-right pull-right"></i></a>
+            <a class="list-group-item" href="#/administrate">Administrate <i class="fa fa-chevron-right pull-right"></i></a>
+
+            <a class="list-group-item" ng-show="credentials.isAdmin" href="#/users">Manage Users <i class="fa fa-chevron-right pull-right"></i></a>
+            <a class="list-group-item" ng-show="credentials.isAdmin" href="#/host">Host Poker <i class="fa fa-chevron-right pull-right"></i></a>
+
+        </div>
+
+        <!-- CODE REUSE, ANYONE?! -->
+        <div class="container section">
+            <div id="loginStatus" class="bubble" ng-show="credentials.loggedIn">
+                <p>You are logged in as {{credentials.userName}}</p>
+                <p>
+                    You are <span ng-show="credentials.isAdmin">an admin</span> <span ng-show="!credentials.isAdmin">a user</span> on the team: <br>
+                    &nbsp;&nbsp; {{credentials.team.name}}
+                </p>
+
+                <a ng-click="logOff()">Log out?</a>
+            </div>
+
+            <div id="loginStatus" ng-show="!credentials.loggedIn">
+                <p>You're not currently logged in.</p>
+
+
+                <a href="#/login">Log in?</a>
+            </div>
+        </div>
+
+    </div>
+</div>
