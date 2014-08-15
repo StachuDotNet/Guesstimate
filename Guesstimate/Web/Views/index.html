@@ -28,10 +28,19 @@
 
     <script src="app/demo.js"></script>
     <script src="app/routing.js"></script>
-    <script src="app/mainCtrl.js"></script>
+
+    <!-- Services -->
+    <script src="app/services/credentialsService.js"></script>
+    <script src="app/services/voteService.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/controllers/loginCtrl.js"></script>
+    <script src="app/controllers/mainCtrl.js"></script>
+    <script src="app/controllers/adminCtrl.js"></script>
+    <script src="app/controllers/voteCtrl.js"></script>
 </head>
 
-<body ng-app="Guesstimate" ng-controller="MainController">
+<body ng-app="Guesstimate" ><!--ng-controller="MainController"-->
 
     <div ng-include="'app/partials/sidebar.html'" class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar"></div>
 

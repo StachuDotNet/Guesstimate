@@ -21,15 +21,5 @@ namespace Web.Hubs
             return false;
         }
 
-        public bool ClearVotesAdmin(string adminPass)
-        {
-            if (_repo.ClearVotes(adminPass))
-            {
-                UpdateClientVoteList();
-                return true;
-            }
-
-            return false;
-        }
     }
 }

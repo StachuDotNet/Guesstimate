@@ -15,11 +15,10 @@
 
         <!-- CODE REUSE, ANYONE?! -->
         <div class="container section">
-            <div id="loginStatus" class="bubble" ng-show="credentials.loggedIn">
+            <div id="loginStatus" class="bubble" ng-show="$parent.credentials.loggedIn">
                 <p>You are logged in as {{credentials.userName}}</p>
                 <p>
-                    You are <span ng-show="credentials.isAdmin">an admin</span> <span ng-show="!credentials.isAdmin">a user</span> on the team: <br>
-                    &nbsp;&nbsp; {{credentials.team.name}}
+                    You are <span ng-show="credentials.isAdmin">an admin</span> <span ng-show="!credentials.isAdmin">a user</span>
                 </p>
 
                 <a ng-click="logOff()">Log out?</a>

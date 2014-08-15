@@ -11,11 +11,11 @@ namespace Web.Hubs
     public partial class TeamHub : Hub
     {
         public JavaScriptSerializer javascriptSerializer;
-        public IRepository _repo;
+        public IDataService _repo;
 
         public TeamHub()
         {
-            _repo = new Repository();
+            _repo = new DataService();
             javascriptSerializer = new JavaScriptSerializer();
         }
     }

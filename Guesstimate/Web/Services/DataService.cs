@@ -6,9 +6,9 @@ using Web.Models;
 
 namespace Web.Persistance
 {
-    public class Repository : IRepository
+    public class DataService : IDataService
     {
-        public Repository()
+        public DataService()
         {
             var password = "password";
 

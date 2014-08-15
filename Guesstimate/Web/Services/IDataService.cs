@@ -6,7 +6,7 @@ using Web.Models;
 
 namespace Web.Persistance
 {
-    public interface IRepository
+    public interface IDataService
     {
         bool LogOn(string name, string pass);
 
@@ -19,7 +19,6 @@ namespace Web.Persistance
         bool Vote(string name, string pass, string vote);
 
         // admin stuff
-        bool ClearVotes(string adminPass);
 
         bool ClaimAdmin(string adminPass);
     }

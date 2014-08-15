@@ -86,6 +86,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\controllers\adminCtrl.js" />
+    <Content Include="app\controllers\loginCtrl.js" />
+    <Content Include="app\controllers\voteCtrl.js" />
+    <Content Include="app\services\credentialsService.js" />
+    <Content Include="app\services\voteService.js" />
     <Content Include="packages.config" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\fonts\fontawesome-webfont.ttf" />
@@ -101,7 +106,7 @@
   <ItemGroup>
     <Content Include="app\demo.css" />
     <Content Include="app\demo.js" />
-    <Content Include="app\mainCtrl.js" />
+    <Content Include="app\controllers\mainCtrl.js" />
     <Content Include="app\partials\administrate.html" />
     <Content Include="app\partials\home.html" />
     <Content Include="app\partials\host.html" />
@@ -145,7 +150,6 @@
     <Content Include="assets\js\mobile-angular-ui.js" />
     <Content Include="assets\js\mobile-angular-ui.min.js" />
     <Content Include="Views\index.html" />
-    <Content Include="Views\test.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -157,9 +161,8 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Modules\HomeModule.cs" />
-    <Compile Include="Modules\TestModule.cs" />
-    <Compile Include="Persistance\IRepository.cs" />
-    <Compile Include="Persistance\Repository.cs" />
+    <Compile Include="Services\IDataService.cs" />
+    <Compile Include="Services\DataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Hubs\TestHub.cs" />
