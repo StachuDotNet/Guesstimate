@@ -1,6 +1,7 @@
 ﻿angular.module('Guesstimate')
 .controller('AdminController', function ($scope, $location, team, credentialsService) {
     $scope.admin_creds = { pass: '' };
+    $scope.admin = { showVotes: true, showNames: false };
 
     $scope.claimAdmin = function () {
         alert('claiming administration');

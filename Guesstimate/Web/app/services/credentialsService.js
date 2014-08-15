@@ -1,6 +1,5 @@
 ﻿angular.module('Guesstimate').factory('credentialsService', function (team, $location, $rootScope) {
     $rootScope.admin_creds = { pass: "" };
-    var admin = { showVotes: true, showNames: false };
 
     $rootScope.teamMembers = [];
     $rootScope.credentials;
@@ -56,12 +55,12 @@
     };
 
     team.client.updateUserList = function (newUserList) {
-        teamMembers = JSON.parse(newUserList);
+        $rootScope.teamMembers = JSON.parse(newUserList);
         $rootScope.$apply();
     };
 
     var logOff = function () {
-        team.server.logOff(credentials.userName, credentials.password)
+        team.server.logOff($rootScope.credentials.userName, $rootScope.credentials.password)
             .done(function (result) {
                 if (result) {
                     clearCredentials();
