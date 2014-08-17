@@ -1,4 +1,5 @@
-﻿angular.module('Guesstimate').factory('voteService', function (team, $location, $rootScope) {
+﻿angular.module('Guesstimate')
+    .factory('voteService', function ($location, $rootScope, hubService) {
     var myVote = 0;
 
     $rootScope.votesForCurrentRound = [];
@@ -10,11 +11,17 @@
     };
 
     var submitVote = function (vote) {
-        team.server.submitVoteForCurrentRound($rootScope.credentials.userName, $rootScope.credentials.password, vote);
+        hubService.server_submitVote(vote);
     };
 
-    team.client.updateVoteList = function (newVoteList) {
+    var updateVoteList = function (newVoteList) {
         votesForCurrentRound = JSON.parse(newVoteList);
+        $rootScope.$apply();
+    };
+
+    // called by hubService
+    var updateVoteList = function (newVoteList) {
+        votesForCurrentRound = newVoteList;
         $rootScope.$apply();
     };
 
@@ -22,7 +29,8 @@
         submitVote: submitVote,
         clearVotes: clearVotes,
         getCards: function () { return cards; },
-        getCurrentVote: function () { return $rootScope.votesForCurrentRound; }
+        getCurrentVote: function () { return $rootScope.votesForCurrentRound; },
+        updateVoteList: updateVoteList
     };
 });
 

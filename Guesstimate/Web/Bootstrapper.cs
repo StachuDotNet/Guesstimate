@@ -1,5 +1,6 @@
 ﻿using Nancy;
 using Nancy.Conventions;
+using Nancy.Diagnostics;
 using Nancy.Session;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,11 @@ namespace Web
             nancyConventions.StaticContentsConventions.Add(
                 StaticContentConventionBuilder.AddDirectory("/app")
             );
+        }
+
+        protected override DiagnosticsConfiguration DiagnosticsConfiguration
+        {
+            get { return new DiagnosticsConfiguration { Password = @"password" }; }
         }
     }
 }

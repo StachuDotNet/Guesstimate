@@ -90,6 +90,7 @@
     <Content Include="app\controllers\loginCtrl.js" />
     <Content Include="app\controllers\voteCtrl.js" />
     <Content Include="app\services\credentialsService.js" />
+    <Content Include="app\services\hubService.js" />
     <Content Include="app\services\voteService.js" />
     <Content Include="packages.config" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />

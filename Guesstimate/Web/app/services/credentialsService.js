@@ -1,4 +1,4 @@
-﻿angular.module('Guesstimate').factory('credentialsService', function (team, $location, $rootScope) {
+﻿angular.module('Guesstimate').factory('credentialsService', function ($location, $rootScope, hubService) {
     $rootScope.admin_creds = { pass: "" };
 
     $rootScope.teamMembers = [];
@@ -21,7 +21,7 @@
     clearCredentials();
 
     var claimAdmin = function (adminPass) {
-        team.server.claimAdmin(adminPass)
+        hubService.server_claimAdmin(adminPass)
 			.done(function (result) {
 			    if (result) {
 			        $rootScope.admin_creds.pass = adminPass;
@@ -38,7 +38,9 @@
     var log_in = {};
 
     var submitLogin = function (username, password) {
-        team.server.logOn(username, password)
+        alert(username + ":" + password);
+
+        hubService.server_logOn(username, password)
             .done(function (result) {
                 if (result) {
                     $rootScope.credentials.userName = username;
@@ -54,13 +56,14 @@
             });
     };
 
-    team.client.updateUserList = function (newUserList) {
-        $rootScope.teamMembers = JSON.parse(newUserList);
+
+    var updateUserList = function (newUserList) {
+        $rootScope.teamMembers = newUserList;
         $rootScope.$apply();
     };
 
     var logOff = function () {
-        team.server.logOff($rootScope.credentials.userName, $rootScope.credentials.password)
+        hubService.server_logOff($rootScope.credentials.userName, $rootScope.credentials.password)
             .done(function (result) {
                 if (result) {
                     clearCredentials();

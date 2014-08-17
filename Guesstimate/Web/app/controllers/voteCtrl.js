@@ -1,5 +1,5 @@
 ﻿angular.module('Guesstimate')
-.controller('VoteController', function ($rootScope, $scope, $location, team, credentialsService, voteService) {
+.controller('VoteController', function ($rootScope, $scope, $location, voteService) {
 
     $scope.vote = 0;
 

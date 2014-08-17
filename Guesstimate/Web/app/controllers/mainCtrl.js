@@ -1,8 +1,4 @@
-﻿angular.module('Guesstimate').controller('MainController', function ($rootScope, $scope, $location, team, credentialsService) {
+﻿angular.module('Guesstimate').controller('MainController', function ($rootScope, $scope, $location, credentialsService) {
    
-    $scope.usersOnline = credentialsService.getTeamMembers();
-    
-    $rootScope.nextRound = function () {
-        team.server.clearVotesAdmin($rootScope.admin_creds.pass);
-    };
+    $scope.usersOnline = function () { return credentialsService.getTeamMembers(); };
 });

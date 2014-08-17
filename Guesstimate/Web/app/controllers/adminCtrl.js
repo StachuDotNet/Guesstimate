@@ -1,5 +1,5 @@
 ﻿angular.module('Guesstimate')
-.controller('AdminController', function ($scope, $location, team, credentialsService) {
+.controller('AdminController', function ($scope, $location, credentialsService) {
     $scope.admin_creds = { pass: '' };
     $scope.admin = { showVotes: true, showNames: false };
 
@@ -12,6 +12,6 @@
         alert('nextRound');
         var adminCreds = credentialsService.getAdminCreds();
         console.log(adminCreds);
-        team.server.clearVotesAdmin(adminCreds.pass);
+        //team.server.clearVotesAdmin(adminCreds.pass);
     };
 });
