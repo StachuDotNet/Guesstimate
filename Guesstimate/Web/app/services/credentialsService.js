@@ -56,11 +56,10 @@
             });
     };
 
-
-    var updateUserList = function (newUserList) {
+    $rootScope.$on('hubService.updateUserList', function (e, newUserList) {
         $rootScope.teamMembers = newUserList;
         $rootScope.$apply();
-    };
+    });
 
     var logOff = function () {
         hubService.server_logOff($rootScope.credentials.userName, $rootScope.credentials.password)

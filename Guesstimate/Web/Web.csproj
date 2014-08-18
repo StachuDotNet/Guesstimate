@@ -92,6 +92,7 @@
     <Content Include="app\services\credentialsService.js" />
     <Content Include="app\services\hubService.js" />
     <Content Include="app\services\voteService.js" />
+    <Content Include="assets\js\signalr-hub.min.js" />
     <Content Include="packages.config" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\fonts\fontawesome-webfont.ttf" />

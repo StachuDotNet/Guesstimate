@@ -16,7 +16,7 @@
 
 			<div class="scrollable-content">
 				<div class="list-group">
-					<div ng-repeat="vote in votesForCurrentRound | orderBy: 'vote'" href="#" class="list-group-item">
+					<div ng-repeat="vote in votesForCurrentRound() | orderBy: 'vote'" href="#" class="list-group-item">
                         <span ng-show="admin.showVotes">{{vote.vote}}</span> <span ng-show="admin.showNames">{{ vote.name }}</span>
 					</div>
 				</div>

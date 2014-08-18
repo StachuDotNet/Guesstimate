@@ -9,13 +9,13 @@
                 <div bs-panel title="Select a Card">
                     <select ng-model="vote">
                         <option></option>
-                        <option ng-repeat="card in cards">{{card}}</option>
+                        <option ng-repeat="card in cards()">{{card}}</option>
                     </select>
                 </div>
 
                 <div bs-panel title="Submit vote, or show overlay">
                     <a class="btn btn-primary" href="#boundOverlay" toggle="on">Show overlay</a>
-                    <a ng-show="credentials.loggedIn" ng-click="submitVote()" class="btn btn-primary">Vote</a>
+                    <a ng-show="credentials.loggedIn" ng-click="submitVote(vote)" class="btn btn-primary">Vote</a>
                 </div>
             </form>
         </div>
