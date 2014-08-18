@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Script.Serialization;
 using Web.Persistance;
+using Web.Services;
 
 namespace Web.Hubs
 {
@@ -15,7 +16,9 @@ namespace Web.Hubs
 
         public TeamHub()
         {
-            _repo = new DataService();
+            //_repo = new StaticDataService();
+
+            _repo = new RavenDataService();
             javascriptSerializer = new JavaScriptSerializer();
         }
     }

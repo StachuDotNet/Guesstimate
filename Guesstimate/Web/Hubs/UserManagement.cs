@@ -30,6 +30,16 @@ namespace Web.Hubs
             return false;
         }
 
+        public bool AddUser(string adminPass, string name)
+        {
+            if (_repo.AddUser(adminPass, name))
+            {
+                UpdateClientUserList();
+                return true;
+            }
+            return false;
+        }
+
         private void UpdateClientUserList()
         {
             Clients.All.UpdateUserList(

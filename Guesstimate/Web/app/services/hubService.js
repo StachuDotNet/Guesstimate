@@ -67,7 +67,7 @@ angular.module('Guesstimate')
         },
 
         //server side methods
-        methods: ['logOn', 'logOff', 'claimAdmin', 'submitVoteForCurrentRound'],
+        methods: ['logOn', 'logOff', 'claimAdmin', 'submitVoteForCurrentRound', 'addUser'],
 
         ////query params sent on initial connection
         //queryParams: {
@@ -91,11 +91,17 @@ angular.module('Guesstimate')
         return hub.claimAdmin(adminPass);
     };
 
+    var server_addUser = function (adminPass, name) {
+        alert('3');
+        return hub.addUser(adminPass, name);
+    };
+
     return {
         server_logOn: server_logOn,
         server_logOff: server_logOff,
         server_submitVote: server_submitVote,
-        server_claimAdmin: server_claimAdmin
+        server_claimAdmin: server_claimAdmin,
+        server_addUser: server_addUser
     };
 }]);
 

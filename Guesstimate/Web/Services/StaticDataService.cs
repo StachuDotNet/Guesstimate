@@ -6,9 +6,9 @@ using Web.Models;
 
 namespace Web.Persistance
 {
-    public class DataService : IDataService
+    public class StaticDataService : IDataService
     {
-        public DataService()
+        public StaticDataService()
         {
             var password = "password";
 
@@ -57,8 +57,6 @@ namespace Web.Persistance
             return _UserList.ToList();
         }
 
-
-
         public Dictionary<string, string> VoteList()
         {
             return _Votes;
@@ -98,6 +96,23 @@ namespace Web.Persistance
         public bool ClaimAdmin(string adminPass)
         {
             return adminPass == _adminPass;
+        }
+
+        public bool AddUser(string adminPass, string name)
+        {
+            if (adminPass != _adminPass) { return false; }
+
+            if (_UserList.Select(u => u.Name.ToLower()).Any(u => u == name.ToLower())) { return false; }
+
+            _UserList.Add(new User
+            {
+                Name = name,
+                Password = "password",
+                Online = false,
+                ID = _UserList.Select(u => u.ID).Max() + 1
+            });
+
+            return true;
         }
     }
 }

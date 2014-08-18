@@ -9,17 +9,16 @@
 		<form ng-submit="submitNewUser()">
 
 			<div bs-panel title="Existing users">
-				<p ng-repeat="user in userInTeam"> {{user.name}} <a>Delete</a></p>
-				{{$parent.userToCreate}}
+				<p ng-repeat="user in userInTeam()"> {{user}} <a>Delete</a></p>
 			</div>
 
 			<div bs-panel title="Create a new user">
-				<input type="text" ng-model="$parent.userToCreate" label="Username" bs-form-control></input>
+				<input type="text" ng-model="userToCreate.name" label="Username" bs-form-control></input>
 			</div>
 
 			<div bs-panel class="form-actions">
 				<div content-for="navbarAction" duplicate>
-					<button class="btn btn-primary">
+					<button class="btn btn-primary" ng-click="addNewUser()">
 						Add a new user
 					</button>
 				</div>

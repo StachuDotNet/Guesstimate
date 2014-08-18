@@ -73,6 +73,17 @@
             });
     };
 
+    var addNewUser = function (name) {
+        hubService.server_addUser($rootScope.admin_creds.pass, name)
+            .done(function (result) {
+                if (result) {
+                    $location.path("");
+                    $rootScope.$apply();
+                } else {
+                    alert('bad');
+                }
+    };
+
     return {
         logOff: logOff,
         submitLogin: submitLogin,
@@ -80,6 +91,7 @@
         claimAdmin: claimAdmin,
         getAdminCreds: function () {
             return $rootScope.admin_creds;
-        }
+        },
+        addNewUser: addNewUser
     };
 });

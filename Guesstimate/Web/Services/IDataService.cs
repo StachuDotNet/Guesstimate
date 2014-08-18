@@ -21,5 +21,7 @@ namespace Web.Persistance
         // admin stuff
 
         bool ClaimAdmin(string adminPass);
+
+        bool AddUser(string adminPass, string name);
     }
 }
