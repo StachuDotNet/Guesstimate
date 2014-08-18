@@ -92,7 +92,6 @@ angular.module('Guesstimate')
     };
 
     var server_addUser = function (adminPass, name) {
-        alert('3');
         return hub.addUser(adminPass, name);
     };
 

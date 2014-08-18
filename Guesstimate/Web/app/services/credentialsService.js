@@ -77,6 +77,7 @@
         hubService.server_addUser($rootScope.admin_creds.pass, name)
             .done(function (result) {
                 if (result) {
+                        
                     $location.path("");
                     $rootScope.$apply();
                 } else {
